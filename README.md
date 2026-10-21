@@ -81,7 +81,7 @@ Configures the FLMD Ethernet IPv4 settings.
 
 **Script:** `VOBC/PassengerTrain/PassengerTrain_Ping_Test.ps1`
 
-Tests network connectivity between the Loco MRU and CBTC equipment.
+Tests network connectivity between the Passenger Train Network Switches and CBTC equipment.
 
 **Key functions:**
 - Ping each CBTC equipment endpoint from the Passenger Train Network Switch 1 and Network Switch 2.
