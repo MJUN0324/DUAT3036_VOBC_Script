@@ -1,5 +1,3 @@
-# DUAT3036_VOBC_Script
-
 # CBTC Railway Maintenance Tools
 
 A collection of PowerShell scripts designed to support railway maintenance and troubleshooting activities for CBTC (Communication-Based Train Control) equipment. The tools assist with MRU configuration, locomotive Ethernet configuration, network connectivity testing, and VOBC syslog collection.
@@ -9,6 +7,7 @@ A collection of PowerShell scripts designed to support railway maintenance and t
 ```text
 .
 ├── MRU/
+│   ├── CheckMRUCert_pingSRS_NMS.ps1
 │   └── MRU_Deployment_Tool.ps1
 │
 ├── VOBC/
@@ -30,6 +29,13 @@ A collection of PowerShell scripts designed to support railway maintenance and t
 
 ### 1. MRU
 
+**Script:** `MRU/CheckMRUCert_pingSRS_NMS.ps1`
+
+Inspects certificates from the MRU (Mobile Radio Unit) and perform ping test to SRS1 and NMS.
+
+**Key functions:**
+- Inspect MRU certificates.
+- Perform ping test to SRS1 and NMS.
 **Script:** `MRU/MRU_Deployment_Tool.ps1`
 
 Extracts certificates from the MRU (Mobile Radio Unit) and configures the MRU for deployment.
