@@ -111,7 +111,7 @@ try {
     if ($LASTEXITCODE -ne 0) {
         throw "PSCP command failed with exit code $LASTEXITCODE"
     }
-    Start-Sleep 3
+    Start-Sleep 15
     Write-Host "Done. Logs saved to $logFilePath" -ForegroundColor Green
 
 # ------------------------------------------------------------------------------------
@@ -123,7 +123,7 @@ try {
     if ($LASTEXITCODE -ne 0) {
         throw "PSCP command failed with exit code $LASTEXITCODE"
     }
-    Start-Sleep 3
+    Start-Sleep 15
     Write-Host "Done. Logs saved to $secondlogFilePath" -ForegroundColor Green
 
 # ------------------------------------------------------------------------------------
@@ -137,7 +137,7 @@ try {
     if ($LASTEXITCODE -ne 0) {
         throw "PSCP command failed with exit code $LASTEXITCODE"
     }
-    Start-Sleep 3
+    Start-Sleep 20
     Write-Host "Done. Logs saved to $logFilePath" -ForegroundColor Green
 
 # ------------------------------------------------------------------------------------
@@ -149,7 +149,7 @@ try {
     if ($LASTEXITCODE -ne 0) {
         throw "PSCP command failed with exit code $LASTEXITCODE"
     }
-    Start-Sleep 3
+    Start-Sleep 20
     Write-Host "Done. Logs saved to $secondlogFilePath" -ForegroundColor Green
 }
 catch {
