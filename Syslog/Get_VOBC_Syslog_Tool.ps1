@@ -106,24 +106,24 @@ $pscp = "C:\FLMD Toolbox\putty\pscp.exe"
 try {
     Write-Host "Downloading logs from $loginhost ..." -ForegroundColor Green
 
-    & $pscp -pw root -P 22 -r "${username}@${loginhost}:/var/volatile" $logFilePath
+    & $pscp -pw root -P 22 -r "${username}@${loginhost}:/var/volatile/log" $logFilePath
 
     if ($LASTEXITCODE -ne 0) {
         throw "PSCP command failed with exit code $LASTEXITCODE"
     }
-    Start-Sleep 3
+    Start-Sleep 10
     Write-Host "Done. Logs saved to $logFilePath" -ForegroundColor Green
 
 # ------------------------------------------------------------------------------------
 
     Write-Host "Downloading logs from $secondloginhost ..." -ForegroundColor Green
 
-    & $pscp -pw root -P 22 -r "${username}@${secondloginhost}:/var/volatile" $secondlogFilePath
+    & $pscp -pw root -P 22 -r "${username}@${secondloginhost}:/var/volatile/log" $secondlogFilePath
 
     if ($LASTEXITCODE -ne 0) {
         throw "PSCP command failed with exit code $LASTEXITCODE"
     }
-    Start-Sleep 3
+    Start-Sleep 10
     Write-Host "Done. Logs saved to $secondlogFilePath" -ForegroundColor Green
 
 # ------------------------------------------------------------------------------------
@@ -137,7 +137,7 @@ try {
     if ($LASTEXITCODE -ne 0) {
         throw "PSCP command failed with exit code $LASTEXITCODE"
     }
-    Start-Sleep 3
+    Start-Sleep 10
     Write-Host "Done. Logs saved to $logFilePath" -ForegroundColor Green
 
 # ------------------------------------------------------------------------------------
@@ -149,7 +149,7 @@ try {
     if ($LASTEXITCODE -ne 0) {
         throw "PSCP command failed with exit code $LASTEXITCODE"
     }
-    Start-Sleep 3
+    Start-Sleep 10
     Write-Host "Done. Logs saved to $secondlogFilePath" -ForegroundColor Green
 }
 catch {
