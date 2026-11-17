@@ -62,6 +62,11 @@ $LocalPath3 = ".\$TrainID_$TimeStamp\VOBC1R2\"
 $LocalPath4 = ".\$TrainID_$TimeStamp\VOBC2R1\"
 
 
+$loginhost1 = ""
+$loginhost2 = ""
+$logFilePath1 = ""
+$logFilePath2 = ""
+
 if (
 	($Cab -eq "1" -and $Switch -eq "1") -or
 	($Cab -eq "2" -and $Switch -eq "2")
@@ -92,13 +97,24 @@ else {
 	exit
 }
 
+$CollectScript = Join-Path $PSScriptRoot "\module\CollectLogs.ps1" 
 
-$job1 = Start-Job -ScriptBlock {
-    & ".\module\CollectLogs.ps1" -HostName "$loginhost1" -LocalPath "$logFilePath1"
+$job1 = Start-Job -ArgumentList $CollectScript, $loginhost1, $logFilePath1  -ScriptBlock {
+    param(
+        $CollectScript,
+        $loginhost1,
+        $logFilePath1
+    )
+    & "$CollectScript" -HostName "$loginhost1" -LocalPath "$logFilePath1"
 }
 
-$job2 = Start-Job -ScriptBlock {
-    & ".\module\CollectLogs.ps1" -HostName "$loginhost2" -LocalPath "$logFilePath2"
+$job2 = Start-Job -ArgumentList $CollectScript, $loginhost2, $logFilePath2 -ScriptBlock {
+    param(
+        $CollectScript,
+        $loginhost2,
+        $logFilePath2
+    )
+    & "$CollectScript" -HostName "$loginhost2" -LocalPath "$logFilePath2"
 }
 
 Wait-Job $job1,$job2
@@ -114,4 +130,7 @@ if ($LASTEXITCODE -eq 0) {
 }
 
 # Clean up
-Remove-Item $tempFile -Force
+# Remove-Item $tempFile -Force
+Remove-Job $job1
+Remove-Job $job2
+pause
