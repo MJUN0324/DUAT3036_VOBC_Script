@@ -56,10 +56,10 @@ $VOBC2R2IP ="10.14.$thirdOctet.$fourthOctet"
 
 $TimeStamp = Get-Date -Format "yyyyMMdd_HHmmss"
 
-$LocalPath1 = ".\$TrainID_$TimeStamp\VOBC1R1\"
-$LocalPath2 = ".\$TrainID_$TimeStamp\VOBC2R2\"
-$LocalPath3 = ".\$TrainID_$TimeStamp\VOBC1R2\"
-$LocalPath4 = ".\$TrainID_$TimeStamp\VOBC2R1\"
+$LocalPath1 = ".\Train$TrainID\$TimeStamp\VOBC1R1\"
+$LocalPath2 = ".\Train$TrainID\$TimeStamp\VOBC2R2\"
+$LocalPath3 = ".\Train$TrainID\$TimeStamp\VOBC1R2\"
+$LocalPath4 = ".\Train$TrainID\$TimeStamp\VOBC2R1\"
 
 
 $loginhost1 = ""
