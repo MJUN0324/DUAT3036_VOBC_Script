@@ -97,7 +97,7 @@ else {
 	exit
 }
 
-$CollectScript = Join-Path $PSScriptRoot "\module\CollectLogs.ps1" 
+$CollectScript = Join-Path $PSScriptRoot "\modules\CollectLogs.ps1" 
 
 $job1 = Start-Job -ArgumentList $CollectScript, $loginhost1, $logFilePath1  -ScriptBlock {
     param(

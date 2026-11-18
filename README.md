@@ -20,7 +20,9 @@ A collection of PowerShell scripts designed to support railway maintenance and t
 │   └──summary_ping.bat
 │
 ├── Syslog/
-│   └── Get_VOBC_Syslog_Tool.ps1
+|   ├── modules
+|       └── CollectLogs.ps1
+│   └── Get_VOBC_Syslog_Tool_SFTP.ps1
 │
 └── README.md
 ```
@@ -98,9 +100,10 @@ Tests network connectivity between the Passenger Train Network Switches and CBTC
 
 #### Get VOBC Syslog Tool
 
-**Script:** `Syslog/Get_VOBC_Syslog_Tool.ps1`
+**Script:** `Syslog/Get_VOBC_Syslog_Tool_SFTP.ps1`
 
 Collects syslog files from VOBC (Vehicle On-Board Controller) equipment.
+"Require the "modules" folder to execute"
 
 **Key functions:**
 - Retrieve syslog files from VOBC equipment.
